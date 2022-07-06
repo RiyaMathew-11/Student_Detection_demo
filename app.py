@@ -3,10 +3,11 @@ import os
 from werkzeug.utils import secure_filename
 app = Flask(__name__, static_url_path="/static",template_folder='templates',
             static_folder='static')
+import config
 
 UPLOAD_FOLDER = os.path.join('static', 'uploads')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.secret_key = 'bbeb363596b1d2b0f049'
+app.secret_key = config.secret_key
 
 
 @app.route('/', methods=['GET'])
@@ -18,7 +19,6 @@ def home():
 def upload_image():
 
     uploaded_img = request.files['uploaded-file']
-    # Extracting uploaded data file name
     img_filename = secure_filename(uploaded_img.filename)
     # Upload file to database (defined uploaded folder in static path)
     uploaded_img.save('static/uploads/' + img_filename)
@@ -30,10 +30,6 @@ def upload_image():
 
     return render_template('display_image.html')
 
-    # imagefile = request.files['imagefile']
-    # image_path = "./static/uploads/" + imagefile.filename
-    # imagefile.save(image_path)
-    # return render_template('display_image.html', image_path=image_path, imagefile=imagefile)
 
 
 @app.route('/show_image')
