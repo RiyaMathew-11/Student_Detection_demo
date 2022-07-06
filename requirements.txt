@@ -176,7 +176,7 @@ nose @ file:///opt/concourse/worker/volumes/live/a029938e-1732-4cd8-5b98-0542283
 notebook==6.0.3
 numba==0.50.1
 numexpr==2.7.1
-numpy==1.18.5
+numpy==1.22.0
 numpydoc @ file:///tmp/build/80754af9/numpydoc_1594166760263/work
 oauthlib==3.1.0
 olefile==0.46
