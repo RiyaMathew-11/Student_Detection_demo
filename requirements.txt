@@ -111,7 +111,7 @@ hstspreload @ file:///tmp/build/80754af9/hstspreload_1594058964730/work
 html5lib @ file:///tmp/build/80754af9/html5lib_1593446221756/work
 httpcore==0.11.1
 httptools==0.1.1
-httpx==0.15.4
+httpx==0.23.0
 humanfriendly==9.1
 hyperframe==5.2.0
 idna==2.8
